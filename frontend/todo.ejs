@@ -1,0 +1,71 @@
+<!-- Create todo body  -->
+<div class="container">
+        <div class="box">
+            <div class="todoboxuppercontainer">
+                <h1>ToDo App</h1>
+                <!-- create todo box for input data and perform add button task -->
+                <form action="/create" method="POST">
+                    <!-- Search box  -->
+                    <div class="serchbox">
+                        <span class="heading">Description</span>
+                        <input class="temp" type="text" name="name" placeholder="Enter your task" required>
+                    </div>
+                    <!-- Select category window -->
+                    <div class="sectionbox">
+                        <div class="categorybox">
+                            <label class="heading">Category</label>
+                            <select name="category" class="temp" required>
+                                <option value="">Choose a Category</option>
+                                <option value="personal">Personal</option>
+                                <option value="work">Work</option>
+                                <option value="school">School</option>
+                                <option value="cleaning">Cleaning</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <!-- Select date window -->
+                        <div class="Dobbox">
+                            <p><label class="heading" for="dueDate">Due date</label></p>
+                            <input type="date" name="date" class="temp" required>
+                        </div>
+                    </div>
+                    <!-- Button for add task in todo -->
+                    <div>
+                        <button class="btn1 button"><i class="uil uil-plus-circle"></i> Add Task</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Task body for todo list -->
+            <section>
+                <ul>
+                    <% if(data){%>
+                        <% for(obj of data){%>
+                            <li class="todolistbox">
+        <%# Comment- Data body for contain task name, date, category, and button %>
+                                <div class="tasknamebox">
+                                    <input type="checkbox">
+                                    <div>
+                                        <p class=' task-detail' style="display: inline-block;">
+                                            <%= obj.name %>
+                                        </p>
+                                        <p>
+                                            <%= obj.date %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="task-cat">
+                                    <%= obj.category %>
+                                </div>
+    <%# Comment- Delete button for delete task %>
+                                <div class="deletebut"> 
+                                    <form action="/delete/<%=obj._id%>" method="POST">
+                                        <button class="btn2 button"><i class="uil uil-trash-alt"></i></button>
+                                    </form>
+                                </div> 
+                            </li>
+                        <%}%>
+                    <%}%>
+                </ul>
+            </section>
+        </div>
+</div>

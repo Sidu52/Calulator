@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+body{
+    background-color: rgb(171, 23, 217);
+}
+/* todo body Stylling */
+.container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+}
+.box{
+    background: white;
+    
+    width: 40%;
+    padding: 30px;;
+}
+.todoboxuppercontainer{
+    text-align: center;
+    color: #6f6f6f;
+}
+.serchbox{
+    background: wheat;
+    position: relative;
+    display: flex;
+    margin: 10px 0;
+    border-top: 1px solid black;
+}
+.heading{
+    position: absolute;
+    left: 0;
+    color: #8e8e8e;
+    padding: 0px 10px;
+}
+.temp{
+    width: 100%;
+    padding: 20px 0 7px 10px;
+    font-size: 16px;
+}
+/* focus property use for remove input box outline */
+.temp:focus{
+    outline: none;
+}
+.sectionbox{
+    display: flex;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.categorybox,.Dobbox{
+    width: 50%;
+    position: relative;
+}
+
+/* All button styling */
+.deletebut{
+    display: flex;
+    align-items: center;
+}
+.button{
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 20px 2px;
+    color: white;
+}
+.btn1{
+    background-color: rgb(33, 33, 33);
+}
+.btn2{
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: rgb(231, 43, 43);
+}
+/* Todo body there data store these box stylling */
+.todolistbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.task-cat{
+    background-color: #514444;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    width: 80px;
+    height: 35px;
+    padding: 6px;
+}
+.tasknamebox{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}
